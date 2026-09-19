@@ -1,0 +1,17 @@
+[Unit]
+Description=Controle automatico do cooler do Raspberry Pi
+After=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/raspberry/cooler-control
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 /home/raspberry/cooler-control/cooler-control.py
+Restart=always
+RestartSec=5
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
