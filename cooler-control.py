@@ -4,7 +4,7 @@ import time
 import signal
 import sys
 from pathlib import Path
-from gpiozero import OutputDevice
+from gpiozero import OutputDevice  # type: ignore[import-untyped]
 
 
 # =========================
