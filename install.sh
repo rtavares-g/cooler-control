@@ -17,7 +17,7 @@ else
     cd "$SCRIPT_DIR"
 fi
 
-sudo cp cooler-control.service /etc/systemd/system/cooler-control.service
+sed -e "s|__USER__|$USER|g" -e "s|__HOME__|$HOME|g" cooler-control.service | sudo tee /etc/systemd/system/cooler-control.service > /dev/null
 sudo systemctl daemon-reload
 sudo systemctl enable --now cooler-control
 
