@@ -4,9 +4,9 @@ After=multi-user.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/raspberry/cooler-control
+WorkingDirectory=__HOME__/cooler-control
 Environment=PYTHONUNBUFFERED=1
-ExecStart=/usr/bin/python3 /home/raspberry/cooler-control/cooler-control.py
+ExecStart=/usr/bin/python3 __HOME__/cooler-control/cooler-control.py
 Restart=always
 RestartSec=5
 
